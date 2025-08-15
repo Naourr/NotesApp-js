@@ -77,12 +77,12 @@ textarea.active {
     field-sizing: content;
 }
 .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     max-height: 4rem;
 }
 .content {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .delete-btn {
     position: absolute;
