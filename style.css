@@ -69,7 +69,7 @@ textarea {
     height: 2rem;
     background-color: seashell;
     border-radius: 5px;
-    padding: 0px 6px;
+    padding: 3px 6px;
 }
 textarea.active {
     height: 100%;
