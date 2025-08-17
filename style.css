@@ -71,7 +71,7 @@ html {
     user-select: none;
     position: fixed;
     bottom: 1rem;
-    right: 1rem;
+    right: 0rem;
     color: var(--bg);
     cursor: pointer;
 }
@@ -106,9 +106,12 @@ box.active {
     top: 0;
     left: 0;
     height: 100%;
-    width: calc(100vw - 16px);
+    width: 100vw;
     z-index: 1000;
     border-radius: 0;
+}
+.hide-scrollbar {
+    scrollbar-width: none;
 }
 textarea {
     resize: none;

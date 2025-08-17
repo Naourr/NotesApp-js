@@ -68,10 +68,13 @@ function renderBoxes() {
                     box.classList.add('active');
                     saveBtn.classList.add('active');
                     deleteBtn.classList.add('active');
+                    let main = document.querySelector('html');
+                    main.classList.add('hide-scrollbar');
 
                     saveBtn.addEventListener('click', () => {
                         note.title = boxTitle.value;
                         note.content = boxContent.value;
+                        main.classList.remove('hide-scrollbar');
                        
                         renderBoxes();
                     })
