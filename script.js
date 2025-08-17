@@ -82,6 +82,13 @@ function renderBoxes() {
             })
         })
     })
+    const placeholder = document.querySelector('.placeholder');
+    let box = document.querySelector('box');
+    if (!box) {
+        placeholder.classList.remove('hide');
+    } else {
+        placeholder.classList.add('hide');
+    }
     localStorage.setItem('saveFile', JSON.stringify(notes));
 }
 
@@ -121,3 +128,13 @@ function setTheme(newTheme) {
     document.documentElement.classList.add(`theme-${newTheme}`);
     localStorage.setItem('theme', newTheme);
 }
+
+// window.addEventListener('mousedown', () => {
+//     const placeholder = document.querySelector('.placeholder');
+//     let box = document.querySelector('box');
+//     if (!box) {
+//         placeholder.classList.remove('hide');
+//     } else {
+//         placeholder.classList.add('hide');
+//     }
+// })
