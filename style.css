@@ -1,3 +1,33 @@
+.theme-light {
+    --bg: rgb(255, 241, 224);
+    --text: black;
+    --accent: salmon;
+}
+.theme-matcha {
+    --bg: #9FE870;
+    --text: white;
+    --accent: #133300;
+}
+.theme-blue {
+    --bg: #BDD9D7;
+    --text: white;
+    --accent: #03363D;
+}
+.theme-dark-purple {
+    --bg: rgb(10, 10, 10);
+    --text: white;
+    --accent: purple;
+}
+.theme-dark-turquoise {
+    --bg: rgb(10, 10, 10);
+    --text: white;
+    --accent: #34E0A1;
+}
+.theme-dark-beige {
+    --bg: black;
+    --text: white;
+    --accent: burlywood;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,22 +47,23 @@
 }
 html {
     overflow-x: hidden;
-    scrollbar-color: salmon black;
+    overflow-y: scroll;
+    scrollbar-color: var(--accent) var(--bg);
 }
 #container {
-    background-color: black;
+    background-color: var(--bg);
     min-height: 100vh;
     height: 100%;
     min-width: 100vw;
     width: 100%;
-    color: white;
+    color: var(--text);
     gap: 1rem;
     justify-content: start;
     padding: 2rem;
 }
 .add-btn {
     border-radius: 50%;
-    background-color: salmon;
+    background-color: var(--accent);
     padding: 8px;
     font-size: 4rem;
     height: 60px;
@@ -41,12 +72,27 @@ html {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    color: black;
+    color: var(--bg);
     cursor: pointer;
 }
+#theme-btn {
+    border-radius: 50%;
+    background-color: var(--accent);
+    padding: 8px; 
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+}
+#theme-btn svg {
+    height: 60px;
+    width: 60px;
+    fill: var(--bg);
+    user-select: none;
+}
 box {
-    background-color: salmon;
-    color: black;
+    background-color: var(--accent);
+    color: var(--bg);
     padding: 1rem;
     font-size: 2rem;
     position: relative;
@@ -60,16 +106,18 @@ box.active {
     top: 0;
     left: 0;
     height: 100%;
-    width: 100vw;
+    width: calc(100vw - 16px);
     z-index: 1000;
     border-radius: 0;
 }
 textarea {
     resize: none;
     height: 2rem;
-    background-color: seashell;
+    background-color: transparent;
     border-radius: 5px;
     padding: 3px 6px;
+    color: var(--bg);
+    border: none;
 }
 textarea.active {
     height: 100%;

@@ -81,3 +81,40 @@ function renderBoxes() {
     })
     localStorage.setItem('saveFile', JSON.stringify(notes));
 }
+
+const themes = ['light', 'matcha', 'blue', 'dark-purple', 'dark-turquoise', 'dark-beige']
+let savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    setTheme(savedTheme);
+} else {
+    setTheme('light');
+}
+
+const themeBtn = document.getElementById('theme-btn');
+themeBtn.addEventListener('click', () => {
+    nextTheme();
+})
+
+function nextTheme() {
+    let current = localStorage.getItem('theme');
+    if (!current) {
+        current = 'light';
+    }
+    let index = themes.indexOf(current);
+    let nextIndex = index +1;
+    if (nextIndex >= themes.length) {
+        nextIndex = 0;
+    } 
+    let next = themes[nextIndex];
+    setTheme(next);
+}
+
+function setTheme(newTheme) {
+    document.documentElement.classList.forEach(c => {
+        if (c.startsWith('theme-')) {
+            document.documentElement.classList.remove(c);
+        }
+    });
+    document.documentElement.classList.add(`theme-${newTheme}`);
+    localStorage.setItem('theme', newTheme);
+}
