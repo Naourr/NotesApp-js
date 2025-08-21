@@ -75,6 +75,8 @@ html {
 }
 .add-btn {
     border-radius: 50%;
+    border: 1px solid var(--bg);
+    box-shadow: 0 0 10px var(--bg);
     background-color: var(--accent);
     padding: 8px;
     font-size: 4rem;
@@ -95,6 +97,8 @@ html {
     top: 1rem;
     left: 1rem;
     cursor: pointer;
+    border: 1px solid var(--bg);
+    box-shadow: 0 0 10px var(--bg);
 }
 #theme-btn svg {
     height: 60px;
